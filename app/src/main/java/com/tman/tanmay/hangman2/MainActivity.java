@@ -1,5 +1,6 @@
 package com.tman.tanmay.hangman2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button myButton = (Button) findViewById(R.id.mybutton);
+        //Object systemService = Context.getSystemService(Context.AUDIO_SERVICE);
 
         final EditText input=(EditText) findViewById(R.id.input);
         ImageView image = (ImageView) findViewById(R.id.image);
@@ -27,14 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 //String myName = "Tanmay";
                 //myIntent.putExtra("Name","Tanmay");
                 String word = input.getText().toString();
+                word=word.toLowerCase();
+                //word=word.replaceAll("\\s+","");
                 myIntent.putExtra("Age", word);
+
                 String cword="";
-                //char arr[]= new char[word.length()];
-                /*
-                for(int i = 0; i<word.length(); i++)
-                {
-                    arr[i]=word.charAt(i);
-                }*/
                 char[] arr=word.toCharArray();
                 for(int i = 0; i < word.length(); i++)
                 {
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     cword = cword + arr[i];
                 }
-                cword=cword.toLowerCase();
+                //cword=cword.toLowerCase();
 
                 myIntent.putExtra("Name",cword);
                 Toast.makeText(MainActivity.this,"give the phone to player 2",Toast.LENGTH_LONG).show();

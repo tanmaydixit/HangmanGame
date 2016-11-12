@@ -2,33 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/acolour2">
+    android:background="@color/acolour3">
     <EditText
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="68dp"
-        android:text="Type"
+        android:text=""
+        android:hint="Type"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:inputType="textPersonName"
         android:id="@+id/input1"
         android:background="@android:color/transparent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="200dp"
-        android:layout_alignRight="@+id/hang"
-        android:layout_alignEnd="@+id/hang"
         android:textSize="@dimen/abc_text_size_large_material"
-        android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_width="525dp"
+        android:layout_height="78dp"
         android:text="HANGMAN"
         android:id="@+id/hang"
         android:layout_gravity="center_vertical"
         android:textColor="@android:color/holo_red_light"
-        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textSize="34sp"
+        android:fontFamily="sans-serif-medium"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:gravity="center_horizontal"/>
 
     <Button
         android:layout_width="97dp"
@@ -37,12 +42,13 @@
         android:id="@+id/button"
         android:layout_gravity="center_vertical"
         android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/abc_text_size_large_material"
         android:layout_alignBottom="@+id/input1"
-        android:layout_alignLeft="@+id/word"
-        android:layout_alignStart="@+id/word"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textSize="@dimen/abc_text_size_large_material" />
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
 
     <TextView
         android:layout_width="176dp"
@@ -50,12 +56,33 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/word"
-        android:text="MOVIE"
+        android:text="PRESS ENTER TO GET MOVIE"
         android:textColor="@android:color/holo_green_light"
         android:textSize="@dimen/abc_text_size_large_material"
-        android:layout_alignBaseline="@+id/hang"
-        android:layout_alignBottom="@+id/hang"
+        android:layout_below="@+id/hang"
+        android:layout_marginTop="39dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton1"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:src="@drawable/restart"
+        android:layout_below="@+id/input1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="93dp" />
+
+    <MediaController
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mediaController"
+        android:layout_below="@+id/imageButton1"
+
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

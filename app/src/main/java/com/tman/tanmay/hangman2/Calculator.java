@@ -29,7 +29,7 @@ public class Calculator {//extends AppCompatActivity {
     String exp;
     String word1,cword1,word2,cword2;
     int pos,n;
-    int n1;
+    int n1,fact;
     boolean flag,mis,flag2;
     //public int foo(){return 1;}
     public Calculator() {
@@ -58,6 +58,7 @@ public class Calculator {//extends AppCompatActivity {
         mis=false;
         flag2=true;
         n1=0;
+        fact=0;
         //display=cword;
         //display2=hangman;
     }
@@ -114,8 +115,9 @@ public class Calculator {//extends AppCompatActivity {
 
            if (n == 7) {
                //display.setText("");
-               display2.setText("you lost:( PLAYER 1 WINS");
-
+               fact=1;
+               display2.setText("YOU lost :( \n PLAYER 1 WINS");
+               display.setText("your word was "+word1 );
 
            }
 
@@ -132,11 +134,17 @@ public class Calculator {//extends AppCompatActivity {
            }
 
            if (flag0) {
+               fact=1;
                display2.setText("PLAYER 2 WINS :)");
+               display.setText("  ..LOL..  ");
+
+               //imageButton.setEnabled(false);
                //Toast.makeText(Calculator.this,"go do studies",Toast.LENGTH_LONG).show();
            }
+
        }
        catch (Exception e) {
+
            //display
            //finish();
            //finishActivity(myIntent);
